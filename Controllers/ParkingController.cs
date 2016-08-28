@@ -1,10 +1,26 @@
+using System.Collections.Generic;
 using Devi.ParkingService.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Devi.ParkingService.Controllers
 {
+
     public class ParkingController : Controller
     {
+        private static List<Area> areaList = new List<Area>();
+
+        public ParkingController()
+        {
+            areaList.Add(new Area{
+                Name="P1",
+                Id=1,
+            });
+            areaList.Add(new Area{
+                Name="P2",
+                Id=2,
+            });
+        }
+
         [HttpGet]
         public JsonResult GetCustomer()
         {
@@ -14,12 +30,32 @@ namespace Devi.ParkingService.Controllers
             });
         }
 
-        [HttpPost]
-        public JsonResult SaveCustomer(Customer customer)
+        [HttpGet]
+        public JsonResult GetArea(int idnum)
         {
-            // you can save customer to database here
+            Area returnVal = null;
 
-            return Json(customer);
+            for (int i=0; i<areaList.Count; i++)
+            {
+                if (areaList[i].Id == idnum)
+                    returnVal = areaList[i];
+            }
+
+            return Json(returnVal);
+
+        }
+
+        [HttpGet]
+        public JsonResult SaveArea(string name, int id)
+        {
+            Area newArea = new Area
+            {
+                Name=name,
+                Id=id
+            };
+            areaList.Add(newArea);
+            return Json(newArea);
+
         }
     }
 }
