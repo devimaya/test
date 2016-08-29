@@ -45,13 +45,13 @@ namespace Devi.ParkingService.Controllers
 
         }
 
-        [HttpGet]
-        public JsonResult SaveArea(string name, int id)
+        [HttpPost]
+        public JsonResult SaveArea(Area area)
         {
             Area newArea = new Area
             {
-                Name=name,
-                Id=id
+                Name=area.Name,
+                Id=area.Id
             };
             areaList.Add(newArea);
             return Json(newArea);
