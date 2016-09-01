@@ -1,8 +1,8 @@
 namespace Devi.ParkingService.Models
 {
-    public class Customer
+    public class Location
     {
-        public int Id { get;set; }
         public string Name { get;set; }
+        public int Id { get;set; }
     } 
 }
