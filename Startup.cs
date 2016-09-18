@@ -10,6 +10,8 @@ namespace Devi.ParkingService
     {
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseDeveloperExceptionPage();
+
             app.UseMvc(routes =>
             {
                 // Before all your routes

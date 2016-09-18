@@ -33,6 +33,12 @@ namespace Devi.ParkingService.Controllers
         }
 
         [HttpGet]
+        public IActionResult GetTest()
+        {
+            return Json(new { xinxin = "xinxin" });
+        }
+
+        [HttpGet]
         public JsonResult GetArea(int idnum)
         {
             Area returnVal = null;
