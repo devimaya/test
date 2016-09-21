@@ -12,7 +12,8 @@ namespace Devi.ParkingService.Controllers
         private static List<Area> areaList = new List<Area>();
         private static List<Booking> bookingList = new List<Booking>();
 
-        public TestController(){
+        static TestController()
+        {
             locationList.Add(new Location{
                 Name="Location1",
                 Id=1
@@ -56,6 +57,10 @@ namespace Devi.ParkingService.Controllers
                 start=new DateTime(2016,8,23,12,0,39),
                 end=new DateTime(2016,8,23,22,0,39)
             });
+        }
+
+        public TestController(){
+            
         }
 
         /*public List<Area> GetArea(int inLocId, DateTime inStart, DateTime inEnd)
