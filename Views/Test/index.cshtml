@@ -1,6 +1,14 @@
+<p>Test Form</p>
+@using (Html.BeginForm("AvailableArea", "Test"))
+{
+    <fieldset>
+    Location Id : <input type="text" name="inputId"><br>
+    Customer Id : <input type="text" name="custId"><br>
+    Car Id : <input type="text" name="carId"><br>
+    Start : <br>
+    End : <br>
+    </fieldset>
 
-<html>
-<body>
-<p>The message is</p>
-</body>
-</html>
+    <input type="submit" value="Test" />
+}
+<div id="divResult"></div>
