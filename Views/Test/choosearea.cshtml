@@ -1,0 +1,28 @@
+<h2>Available Areas</h2>
+@model List<Devi.ParkingService.Models.Area>
+    <table class="table">
+    <tr>
+        <th>
+            Id
+        </th>
+        <th>
+            Name
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            Choose Area(call SaveBooking func)
+        </td>
+    </tr>
+}
+
+</table>
