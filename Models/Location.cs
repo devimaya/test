@@ -1,8 +1,15 @@
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Devi.ParkingService.Models
 {
     public class Location
     {
-        public string Name { get;set; }
-        public int Id { get;set; }
-    } 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+        public string Name { get; set; }
+
+        public ICollection<Area> Areas { get; set; } = new List<Area>();
+    }
 }

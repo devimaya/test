@@ -1,0 +1,14 @@
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Booking";
+}
+@model BookingIndexViewModel
+
+<form style="width: 400px">
+    <legend>Book a Service</legend>
+    <div class="form-group">
+        <label>Choose Location:</label>
+        <select asp-for="SelectedLocation" asp-items="Model.AvailableLocations" class="form-control">
+        </select>
+    </div>
+</form>
