@@ -1,0 +1,34 @@
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Booking Details";
+}
+<h1>@TempData["SuccessMessage"]</h1>
+
+@model BookingDetailsViewModel
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">Booking Details</h3>
+    </div>
+    <div class="panel-body">
+        <p>
+            <label>Customer:</label>
+            <span>@Model.CustomerName</span>
+        </p>
+
+        <p>
+            <label>Location:</label>
+            <span>@Model.Location</span>
+        </p>
+
+        <p>
+            <label>Area:</label>
+            <span>@Model.Area</span>
+        </p>
+
+        <p>
+            <label>Time Range:</label>
+            <span>@Model.StartTime - @Model.EndTime</span>
+        </p>
+    </div>
+</div>

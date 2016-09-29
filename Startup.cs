@@ -16,12 +16,14 @@ namespace Devi.ParkingService
         {
             app.UseDeveloperExceptionPage();
 
+            app.UseSession();
+            
             app.UseMvc(routes =>
             {
                 // Before all your routes
                 routes.MapRoute(
                     name: "Default",
-                    template: "{controller}/{action}",
+                    template: "{controller}/{action}/{id?}",
                     defaults: new { controller = "Booking", action = "Index" }
                 );
             });
@@ -41,6 +43,11 @@ namespace Devi.ParkingService
                 // start seeding...
                 context.Database.EnsureCreated();
                 context.Database.Migrate();
+
+                context.Customers.Add(new Customer
+                {
+                    Name = "devi"
+                });
                 var location1 = new Location
                 {
                     Name = "Location 1"
@@ -78,6 +85,7 @@ namespace Devi.ParkingService
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSession();
             var connection = @"Filename=./parking.db";
             services.AddDbContext<ParkingDbContext>(options => options.UseSqlite(connection));
 

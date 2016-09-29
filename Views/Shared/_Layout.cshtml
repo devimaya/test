@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Devi's Parking Service</title>
     <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/2.0.0/flatpickr.min.css" />
     <link rel="stylesheet" href="@Url.Content("~/styles/site.css")" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/2.0.0/flatpickr.min.js"></script>
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Devi's Parking Service</a>
+                <a asp-area="" asp-controller="Booking" asp-action="Index" class="navbar-brand">Devi's Parking Service</a>
             </div>
         </div>
     </div>
@@ -28,4 +30,5 @@
             <p>&copy; 2016 - Devi Pty Ltd</p>
         </footer>
     </div>
+    @RenderSection("scripts", required: false)
 </body>
